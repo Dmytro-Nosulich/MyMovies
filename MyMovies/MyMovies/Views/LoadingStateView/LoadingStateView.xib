@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LoadingStateView" customModule="MyMovies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K2l-T3-rEP">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="eM8-b8-lMz">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="37"/>
+                        </activityIndicatorView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKN-AW-ehc">
+                            <rect key="frame" x="0.0" y="37" width="393" height="83"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OKh-VP-Dvb">
+                                    <rect key="frame" x="8" y="0.0" width="377" height="37"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" name="darkRed"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Cn-Bh-s1W">
+                                    <rect key="frame" x="164.33333333333334" y="45" width="64.666666666666657" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="RXd-B0-YAE"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Retry"/>
+                                    <connections>
+                                        <action selector="didTapRetry" destination="iN0-l3-epB" eventType="touchUpInside" id="83i-NO-byI"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="OKh-VP-Dvb" firstAttribute="top" secondItem="DKN-AW-ehc" secondAttribute="top" id="71p-13-8tV"/>
+                                <constraint firstItem="1Cn-Bh-s1W" firstAttribute="top" secondItem="OKh-VP-Dvb" secondAttribute="bottom" constant="8" id="bJ7-0q-oLs"/>
+                                <constraint firstAttribute="trailing" secondItem="OKh-VP-Dvb" secondAttribute="trailing" constant="8" id="fej-PS-LvH"/>
+                                <constraint firstAttribute="bottom" secondItem="1Cn-Bh-s1W" secondAttribute="bottom" constant="8" id="mvu-Qe-iG9"/>
+                                <constraint firstItem="1Cn-Bh-s1W" firstAttribute="centerX" secondItem="DKN-AW-ehc" secondAttribute="centerX" id="rjw-jl-r25"/>
+                                <constraint firstItem="OKh-VP-Dvb" firstAttribute="leading" secondItem="DKN-AW-ehc" secondAttribute="leading" constant="8" id="tx1-Hl-Unh"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="K2l-T3-rEP" secondAttribute="trailing" id="6Vn-FY-naW"/>
+                <constraint firstItem="K2l-T3-rEP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iTx-GN-sRB"/>
+                <constraint firstAttribute="bottom" secondItem="K2l-T3-rEP" secondAttribute="bottom" id="phh-wo-6oR"/>
+                <constraint firstItem="K2l-T3-rEP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xF8-0k-zkv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="loadingIndicator" destination="eM8-b8-lMz" id="Wgi-6e-Hcw"/>
+                <outlet property="messageContent" destination="DKN-AW-ehc" id="cgL-fE-v5b"/>
+                <outlet property="messageLabel" destination="OKh-VP-Dvb" id="D6c-Lu-jUr"/>
+            </connections>
+            <point key="canvasLocation" x="93.89312977099236" y="284.50704225352115"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="darkRed">
+            <color red="0.85490196078431369" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

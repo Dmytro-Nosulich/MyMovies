@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="MyMovies" customModuleProvider="target">
+            <connections>
+                <outlet property="searchContainerView" destination="VQs-BP-vrR" id="v45-jN-6Wp"/>
+                <outlet property="searchTextField" destination="tcc-f2-KU2" id="ebu-BX-sHz"/>
+                <outlet property="tableView" destination="IPl-vb-MHV" id="1nO-2w-A3X"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQs-BP-vrR">
+                    <rect key="frame" x="30" y="138" width="333" height="56"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="JyE-HM-ruR">
+                            <rect key="frame" x="16" y="16" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="6Ah-LZ-T7d"/>
+                                <constraint firstAttribute="width" constant="24" id="F3l-gi-BC9"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tcc-f2-KU2">
+                            <rect key="frame" x="48" y="0.0" width="277" height="56"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            <connections>
+                                <action selector="didChangeSearchText" destination="-1" eventType="editingChanged" id="9Th-pq-923"/>
+                                <outlet property="delegate" destination="-1" id="RxV-3Q-nRd"/>
+                            </connections>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="tcc-f2-KU2" firstAttribute="centerY" secondItem="VQs-BP-vrR" secondAttribute="centerY" id="2A7-VV-Q5j"/>
+                        <constraint firstItem="tcc-f2-KU2" firstAttribute="top" secondItem="VQs-BP-vrR" secondAttribute="top" id="9ua-Mt-MLS"/>
+                        <constraint firstItem="JyE-HM-ruR" firstAttribute="centerY" secondItem="VQs-BP-vrR" secondAttribute="centerY" id="Den-rJ-xWq"/>
+                        <constraint firstItem="tcc-f2-KU2" firstAttribute="leading" secondItem="JyE-HM-ruR" secondAttribute="trailing" constant="8" id="QCZ-AF-ZUa"/>
+                        <constraint firstAttribute="bottom" secondItem="tcc-f2-KU2" secondAttribute="bottom" id="UZZ-g8-CnH"/>
+                        <constraint firstItem="JyE-HM-ruR" firstAttribute="leading" secondItem="VQs-BP-vrR" secondAttribute="leading" constant="16" id="cJR-Kw-0gc"/>
+                        <constraint firstAttribute="trailing" secondItem="tcc-f2-KU2" secondAttribute="trailing" constant="8" id="uTq-X4-2gx"/>
+                        <constraint firstAttribute="height" constant="56" id="wiy-Kr-6I6"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IPl-vb-MHV">
+                    <rect key="frame" x="0.0" y="218" width="393" height="566"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="sQ1-pf-sYh"/>
+                        <outlet property="delegate" destination="-1" id="Mhf-HQ-6Bg"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="VQs-BP-vrR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="2ct-hi-G4q"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="IPl-vb-MHV" secondAttribute="bottom" id="CXF-uS-LaN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VQs-BP-vrR" secondAttribute="trailing" constant="30" id="Dhp-hM-pml"/>
+                <constraint firstItem="IPl-vb-MHV" firstAttribute="top" secondItem="VQs-BP-vrR" secondAttribute="bottom" constant="24" id="Lcg-0r-pkD"/>
+                <constraint firstItem="IPl-vb-MHV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Lrn-cQ-Vpz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IPl-vb-MHV" secondAttribute="trailing" id="p5T-ME-eOw"/>
+                <constraint firstItem="VQs-BP-vrR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="vcp-Ud-tLP"/>
+            </constraints>
+            <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="search" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

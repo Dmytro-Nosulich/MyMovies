@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MovieCell" customModule="MyMovies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cqL-tH-8Pz">
+                        <rect key="frame" x="30" y="16" width="60" height="89"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="qbI-rd-bGN"/>
+                            <constraint firstAttribute="height" constant="89" id="yUw-4a-vek"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="1Xr-Fg-ydV">
+                        <rect key="frame" x="110" y="39.333333333333343" width="152" height="42.666666666666657"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Baf-uH-1XA">
+                                <rect key="frame" x="0.0" y="0.0" width="31" height="14.333333333333334"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="587-tw-Y2w">
+                                <rect key="frame" x="0.0" y="14.333333333333327" width="41.333333333333336" height="19.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2S-bG-gGO" customClass="RatingView" customModule="MyMovies" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="33.666666666666664" width="57" height="9"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" placeholder="YES" id="f3z-t0-Z4R"/>
+                                    <constraint firstAttribute="height" constant="9" id="hEQ-Ih-Erj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMR-da-YFn">
+                        <rect key="frame" x="270" y="45.666666666666664" width="30" height="29.999999999999993"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="MYi-6e-lh2"/>
+                            <constraint firstAttribute="height" constant="30" id="gYE-6z-xgl"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="favorite_off"/>
+                        <connections>
+                            <action selector="didTapFavoriteButton" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VWG-iB-Yfc"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1Xr-Fg-ydV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3cD-CO-R5R"/>
+                    <constraint firstAttribute="trailing" secondItem="sMR-da-YFn" secondAttribute="trailing" constant="20" id="8jz-07-B0H"/>
+                    <constraint firstItem="sMR-da-YFn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UWl-dh-MiG"/>
+                    <constraint firstAttribute="bottom" secondItem="cqL-tH-8Pz" secondAttribute="bottom" constant="16" id="eMY-AC-wQg"/>
+                    <constraint firstItem="cqL-tH-8Pz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="fRr-Wr-c9L"/>
+                    <constraint firstItem="cqL-tH-8Pz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="hg4-ka-9Qg"/>
+                    <constraint firstItem="1Xr-Fg-ydV" firstAttribute="leading" secondItem="cqL-tH-8Pz" secondAttribute="trailing" constant="20" id="o7I-md-Esh"/>
+                    <constraint firstItem="sMR-da-YFn" firstAttribute="leading" secondItem="1Xr-Fg-ydV" secondAttribute="trailing" constant="8" symbolic="YES" id="uPX-OV-yyu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="favoriteButton" destination="sMR-da-YFn" id="hVW-Nw-cxh"/>
+                <outlet property="infoStackView" destination="1Xr-Fg-ydV" id="3og-zp-WhQ"/>
+                <outlet property="posterImageView" destination="cqL-tH-8Pz" id="wYd-9s-s1U"/>
+                <outlet property="ratingView" destination="r2S-bG-gGO" id="iFD-KV-rKz"/>
+                <outlet property="releaseYearLabel" destination="Baf-uH-1XA" id="XmE-Eh-m9F"/>
+                <outlet property="titleLabel" destination="587-tw-Y2w" id="v6m-tT-DWn"/>
+            </connections>
+            <point key="canvasLocation" x="51.908396946564885" y="5.9859154929577469"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="favorite_off" width="16.666666030883789" height="23"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
